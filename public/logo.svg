@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- White background -->
+  <rect width="800" height="600" fill="white"/>
+
+  <!-- S-curve wave path (teal stroke, no fill) -->
+  <!-- Starts bottom-left, curves up-right in S-shape, ends at orange circle center -->
+  <path
+    d="M 100 330
+       C 150 330, 190 200, 280 220
+       C 370 240, 390 340, 480 320
+       C 540 305, 590 260, 630 230"
+    fill="none"
+    stroke="#2BAD8A"
+    stroke-width="18"
+    stroke-linecap="round"
+  />
+
+  <!-- Orange circle with + (destination point, top right of wave) -->
+  <circle cx="630" cy="210" r="52" fill="#F5923A"/>
+  <!-- White plus sign -->
+  <line x1="630" y1="185" x2="630" y2="235" stroke="white" stroke-width="14" stroke-linecap="round"/>
+  <line x1="605" y1="210" x2="655" y2="210" stroke="white" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- "Care Path" bold teal text -->
+  <text
+    x="400"
+    y="430"
+    font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    font-size="82"
+    font-weight="700"
+    fill="#2BAD8A"
+    text-anchor="middle"
+    letter-spacing="1"
+  >Care Path</text>
+
+  <!-- "PATIENT TRANSPORT" grey subtitle -->
+  <text
+    x="400"
+    y="490"
+    font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+    font-size="30"
+    font-weight="400"
+    fill="#8A9BAA"
+    text-anchor="middle"
+    letter-spacing="6"
+  >PATIENT TRANSPORT</text>
+</svg>

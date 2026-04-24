@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@theme {
+  --color-teal: #2BAD8A;
+  --color-teal-light: #3dc9a0;
+  --color-teal-dark: #1e8a6a;
+  --color-orange: #F5923A;
+  --color-orange-dark: #e07a25;
+  --color-navy: #0B1F3A;
+  --color-navy-light: #132d52;
+  --color-teal-bg: #EEF9F5;
+  --color-grey: #6B7280;
+  --color-light-bg: #F8FAFB;
+
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1a2332;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
