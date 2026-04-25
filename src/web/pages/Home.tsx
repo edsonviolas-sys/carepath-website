@@ -787,6 +787,86 @@ function Contact() {
   );
 }
 
+// ── Gallery ───────────────────────────────────────────────────────────────────
+function Gallery() {
+  const ref = useFadeIn();
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <div ref={ref} className="fade-in text-center mb-16">
+          <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#2BAD8A" }}>
+            Our Service
+          </p>
+          <h2
+            className="text-4xl lg:text-5xl font-extrabold mb-4"
+            style={{ color: "#0B1F3A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+          >
+            Not an Ambulance —
+            <br />
+            <span style={{ color: "#F5923A" }}>A Caring Journey</span>
+          </h2>
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "#6B7280" }}>
+            We specialise in non-emergency transport — wheelchair users, hospital appointments,
+            school transport, and more. Safe, dignified and comfortable every time.
+          </p>
+        </div>
+
+        {/* Image grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {[
+            { src: "/transport1.png", label: "Wheelchair Accessible Transport" },
+            { src: "/transport2.png", label: "Compassionate Care Assistants" },
+            { src: "/transport3.png", label: "Safe & Comfortable Vehicles" },
+          ].map((item, i) => {
+            const cardRef = useFadeIn();
+            return (
+              <div
+                key={item.label}
+                ref={cardRef}
+                className="fade-in rounded-2xl overflow-hidden group relative"
+                style={{ transitionDelay: `${i * 100}ms`, aspectRatio: "3/2" }}
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-5 py-4"
+                  style={{ background: "linear-gradient(to top, rgba(11,31,58,0.85), transparent)" }}
+                >
+                  <p className="text-white text-sm font-semibold">{item.label}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Feature strips */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { emoji: "♿", label: "Wheelchair Accessible" },
+            { emoji: "🏥", label: "Hospital Appointments" },
+            { emoji: "🏫", label: "School Transport" },
+            { emoji: "🧠", label: "Mental Health Support" },
+          ].map((f) => (
+            <div
+              key={f.label}
+              className="rounded-2xl p-5 text-center"
+              style={{ background: "#EEF9F5", border: "1px solid #d1e8e0" }}
+            >
+              <div className="text-3xl mb-2">{f.emoji}</div>
+              <p className="text-sm font-semibold" style={{ color: "#0B1F3A", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                {f.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Footer ────────────────────────────────────────────────────────────────────
 function Footer() {
   return (
@@ -908,6 +988,7 @@ export default function Home() {
       <Services />
       <About />
       <WhyUs />
+      <Gallery />
       <Contact />
       <Footer />
     </div>
